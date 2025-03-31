@@ -55,7 +55,7 @@
      Model training complete and saved as 'language_detection_model.pkl'
 
 
-     #Detect Language
+   #Detect Language
      
      $ pip3 install scikit-learn
      
