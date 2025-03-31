@@ -1,0 +1,30 @@
+import joblib
+
+# Function to load the trained model and make predictions
+def load_and_predict(text):
+    # Load the trained model from the saved file
+    # The model was saved earlier using joblib during the training process
+    model = joblib.load('./model/language_detection_model.pkl')
+    
+    # Make a prediction on the given text input
+    # The model expects a list of texts, so we pass the text inside a list
+    prediction = model.predict([text])
+    return prediction[0]  # Return the predicted language label
+
+# Example usage with a variety of sample texts for different languages
+# This list contains text samples in different languages for testing the model's predictions
+sample_texts = [
+    "Bonjour tout le monde",  # French
+    "Hello everyone",        # English
+    "Hola a todos",          # Spanish
+    "Hallo zusammen",        # German
+    "Ciao a tutti",          # Italian
+    "Привет всем",           # Russian
+    "مرحبا بالجميع",          # Arabic
+    "नमस्ते सब लोग"            # Hindi
+]
+
+# Iterate over each sample text, predict its language, and print the result
+for text in sample_texts:
+    predicted_language = load_and_predict(text)  # Call the function to predict the language
+    print(f'The predicted language for "{text}" is: {predicted_language}')  # Output the prediction
