@@ -54,7 +54,9 @@
      
      Model training complete and saved as 'language_detection_model.pkl'
 
-     # Detect language
+
+     #Detect Language
+     
      $ pip3 install scikit-learn
      
      The predicted language for "Bonjour tout le monde" is: French
